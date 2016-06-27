@@ -1,0 +1,4 @@
+#Managed by puppet. To make updates, please update the ec2_snapshot module.
+MAILTO=<%= @mailto %>
+
+0 4 * * 6 ec2_snapshot /home/ec2_snapshot/ec2_tools/ec2-automate-backup/ec2-automate-backup.sh -r <%= @region %> -s tag -t <%= @tag_full %> <% if purge %>-k <%= @purge_after %><% end %> <%= @extra_opts_s %>
